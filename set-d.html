@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SET D – JavaScript Tasks</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .task-grid{display:grid;gap:14px}
+    .task-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .task-actions input,.task-actions textarea,.task-actions select{
+      padding:10px;border:1px solid rgba(255,255,255,.15);border-radius:12px;
+      background:rgba(0,0,0,.2);color:#e8eefc;
+    }
+    .task-actions textarea{width:100%;min-height:90px}
+    .task-actions button{
+      padding:10px 14px;border-radius:12px;border:1px solid rgba(106,164,255,.45);
+      background:rgba(106,164,255,.2);color:#e8eefc;cursor:pointer;
+    }
+    .task-actions button:hover{background:rgba(106,164,255,.28)}
+    .result-box{
+      margin-top:10px;padding:12px;border:1px solid rgba(255,255,255,.15);
+      border-radius:14px;background:rgba(0,0,0,.16);
+    }
+    #result{white-space:pre-wrap;margin-top:8px;color:rgba(232,238,252,.75)}
+    .hint{opacity:.8;font-size:12px;margin-top:6px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:700px){.two-col{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="card">
+      <h1>SET D – JavaScript Tasks (1–30)</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Student Profile</a>
+        <a href="tasks.html">Weekly Tasks</a>
+        <a href="set-d.html">Set D</a>
+      </nav>
+      <p class="hint">All task results print into the Output Area. Double-click Output Area to clear (Task 30).</p>
+    </header>
+
+    <section class="card" id="resultBox">
+      <h2>Output Area</h2>
+      <div class="result-box">
+        <strong>Result:</strong>
+        <div id="result">Ready.</div>
+      </div>
+      <div class="task-actions">
+        <button type="button" onclick="clearOutput()">Clear Output (Task 26)</button>
+      </div>
+    </section>
+
+    <main class="task-grid">
+
+      <section class="card">
+        <h2>String Tasks (1–6)</h2>
+        <div class="task-actions">
+          <input id="strInput" type="text" placeholder="Enter a sentence / string" style="min-width:320px;">
+          <button onclick="t1_reverseWords()">1) Reverse words</button>
+          <button onclick="t2_extractChars()">2) Extract 1st/3rd/4th/last</button>
+          <button onclick="t3_longestWord()">3) Longest word</button>
+          <button onclick="t4_toggleCase()">4) Toggle case</button>
+          <button onclick="t5_wordAndSpaceCount()">5) Word + space count</button>
+          <button onclick="t6_trimExtraSpaces()">6) Trim extra spaces</button>
+        </div>
+        <p class="hint">Tip: Use the same input box for tasks 1–6.</p>
+      </section>
+
+      <section class="card">
+        <h2>Array Tasks (7–14)</h2>
+        <div class="task-actions">
+          <input id="arrayInput" type="text" placeholder="Enter array items comma-separated (e.g., a,b,b,c)" style="min-width:360px;">
+          <button onclick="t7_fruitsThird()">7) Fruits: show 3rd</button>
+          <button onclick="t8_removeDuplicates()">8) Remove duplicates</button>
+          <button onclick="t9_lastElementPopup()">9) Last element (popup)</button>
+          <button onclick="t10_findIndexUserInput()">10) Find index (user input)</button>
+          <button onclick="t11_mapDouble()">11) map() double numbers</button>
+          <button onclick="t12_mapUppercase()">12) map() uppercase strings</button>
+          <button onclick="t13_spliceReplaceOneByOne()">13) Splice replace (one by one)</button>
+          <button onclick="t14_spliceDeleteOneByOne()">14) Splice delete (one by one)</button>
+        </div>
+        <p class="hint">For numeric tasks (11), enter numbers like: 1,2,3</p>
+      </section>
+
+      <section class="card">
+        <h2>Function Tasks (15–19)</h2>
+        <div class="task-actions two-col">
+          <div>
+            <input id="numA" type="number" placeholder="Number A">
+          </div>
+          <div>
+            <input id="numB" type="number" placeholder="Number B">
+          </div>
+        </div>
+        <div class="task-actions">
+          <select id="opChoice">
+            <option value="add">Add (+)</option>
+            <option value="sub">Subtract (-)</option>
+            <option value="mul">Multiply (*)</option>
+            <option value="div">Divide (/)</option>
+          </select>
+          <button onclick="t15_arithmeticChoice()">15) Arithmetic by choice</button>
+          <button onclick="t16_swapNumbers()">16) Swap two numbers</button>
+          <button onclick="t17_sumDigits()">17) Sum of digits (A)</button>
+          <button onclick="t18_reverseNumber()">18) Reverse number (A)</button>
+          <button onclick="t19_checkLeapYear()">19) Check leap year (A)</button>
+        </div>
+        <p class="hint">Tasks 17–19 use Number A as input.</p>
+      </section>
+
+      <section class="card">
+        <h2>Popup & Validation Tasks (20–26)</h2>
+        <div class="task-actions">
+          <button onclick="t20_allowOnly10DigitsPopup()">20) Popup: allow only 10-digit input</button>
+          <button onclick="t21_numericStringRulePopup()">21) Popup: numeric/string rule arithmetic</button>
+        </div>
+
+        <h3 style="margin-top:14px;">Signup Form (22–25) + Reset (26)</h3>
+        <form id="signupForm" class="task-actions" onsubmit="return handleSignupSubmit(event)">
+          <input id="sName" type="text" placeholder="Full name (required)">
+          <input id="sAge" type="number" placeholder="Age (>=18)" min="0">
+          <input id="sEmail" type="email" placeholder="Email (required)">
+          <textarea id="sMsg" placeholder="Short message (required)"></textarea>
+
+          <button type="submit">24) Submit</button>
+          <button type="reset">24) Reset</button>
+          <button type="button" onclick="clearOutput()">26) Clear Output</button>
+        </form>
+        <p class="hint">22: required fields, 23: age must be >=18, 25: show submitted data + success message.</p>
+      </section>
+
+      <section class="card">
+        <h2>Objects & Events (27–30)</h2>
+
+        <div class="task-actions two-col">
+          <input id="p1" type="text" placeholder="Person 1 name">
+          <input id="p2" type="text" placeholder="Person 2 name">
+          <input id="p3" type="text" placeholder="Person 3 name">
+          <input id="pAge" type="number" placeholder="Person age (for task 27)">
+        </div>
+
+        <div class="task-actions">
+          <button onclick="t27_createPersonObject()">27) Create person object</button>
+          <button onclick="t28_storeThreePersons()">28) Store 3 persons and display</button>
+        </div>
+
+        <h3 style="margin-top:14px;">Countdown Timer (29)</h3>
+        <div class="task-actions">
+          <input id="timerSeconds" type="number" placeholder="Seconds (e.g., 30)" min="1">
+          <button onclick="timerStart()">Start</button>
+          <button onclick="timerPause()">Pause</button>
+          <button onclick="timerReset()">Reset</button>
+        </div>
+        <p class="hint">30: Double-click Output Area to clear (already enabled).</p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="set-d.js"></script>
+</body>
+</html>

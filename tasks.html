@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Tasks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weekly Tasks (Table & List Structuring)</h1>
+      <p><small>Organized by week with short explanations</small></p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Student Profile</a>
+        <a href="tasks.html">Weekly Tasks (Table & Lists)</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Weekly Summary Table</h2>
+      <p><small>Includes borders, padding, and merged cells using colspan/rowspan.</small></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Task</th>
+            <th>Description</th>
+            <th>What I Learned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">Week 1<br><small>(08.10.25)</small></td>
+            <td>GitHub + README</td>
+            <td>Created GitHub profile and repository with README file.</td>
+            <td>How repositories work and how to document work.</td>
+          </tr>
+          <tr>
+            <td>HTML Theory</td>
+            <td>Studied HTML basics until Tables and Lists using W3Schools.</td>
+            <td>Core HTML tags and page structure.</td>
+          </tr>
+
+          <tr>
+            <td>Week 2<br><small>(15.10.25)</small></td>
+            <td colspan="2">Built multi-page website (Home, Profile, Tasks) with tables, lists, images, and CSS.</td>
+            <td>Navigation, table building, list structuring, basic styling.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Unordered List (15 items)</h2>
+      <ul>
+        <li>HTML structure (doctype, html, head, body)</li>
+        <li>Page title</li>
+        <li>Headings</li>
+        <li>Paragraphs</li>
+        <li>Links</li>
+        <li>Navigation menu</li>
+        <li>Images with alt text</li>
+        <li>Image width and height attributes</li>
+        <li>Tables</li>
+        <li>Table headers</li>
+        <li>Table borders</li>
+        <li>Padding and spacing</li>
+        <li>rowspan</li>
+        <li>colspan</li>
+        <li>Basic CSS formatting</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Ordered List (15 items) with nested answers</h2>
+      <ol>
+        <li>What is HTML?
+          <ul><li>HTML structures content using elements (tags).</li></ul>
+        </li>
+        <li>What is CSS?
+          <ul><li>CSS styles the page (colors, spacing, layout).</li></ul>
+        </li>
+        <li>Why use a title tag?
+          <ul><li>It sets the browser tab name and helps organization.</li></ul>
+        </li>
+        <li>Why use alt text?
+          <ul><li>Accessibility and fallback if the image fails.</li></ul>
+        </li>
+        <li>What is a hyperlink?
+          <ul><li>A clickable link created with the &lt;a&gt; tag.</li></ul>
+        </li>
+        <li>What is a table used for?
+          <ul><li>To present data in rows and columns.</li></ul>
+        </li>
+        <li>What is rowspan?
+          <ul><li>It merges one cell across multiple rows.</li></ul>
+        </li>
+        <li>What is colspan?
+          <ul><li>It merges one cell across multiple columns.</li></ul>
+        </li>
+        <li>What is an ordered list?
+          <ul><li>A numbered list made with &lt;ol&gt; and &lt;li&gt;.</li></ul>
+        </li>
+        <li>What is an unordered list?
+          <ul><li>A bullet list made with &lt;ul&gt; and &lt;li&gt;.</li></ul>
+        </li>
+        <li>What is a comment in HTML?
+          <ul><li>&lt;!-- This is a comment --&gt; (not shown on the page).</li></ul>
+        </li>
+        <li>Why use semantic tags?
+          <ul><li>They make structure clearer (header, nav, main, section).</li></ul>
+        </li>
+        <li>What is a CSS class?
+          <ul><li>A label to style multiple elements using .classname.</li></ul>
+        </li>
+        <li>Why organize files into folders?
+          <ul><li>Cleaner structure (images folder, css file, html pages).</li></ul>
+        </li>
+        <li>What is GitHub Pages?
+          <ul><li>Free hosting for static websites from a GitHub repository.</li></ul>
+        </li>
+      </ol>
+    </section>
+    <section class="card">
+  <h2>Task 26.11.25 – HTML & CSS (Responsive Table + Effects)</h2>
+  <p><small>Desktop shows full table. Mobile shows only 2 columns (Number + Full Name). Includes tooltips and hover animation.</small></p>
+
+  
+
+  <div class="table-wrap">
+    <table class="students-table">
+      <thead>
+        <tr>
+          <th class="col-number">Number</th>
+          <th class="col-name">Full Name</th>
+          <th class="col-course">Course</th>
+          <th class="col-id">Group Number</th>
+          <th class="col-year">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-number">1</td>
+          <td class="col-name">
+            <span class="tip" data-tip="Example student">Davud Mustafazade</span>
+          </td>
+          <td class="col-course">Web Basics</td>
+          <td class="col-id">4250</td>
+          <td class="col-year">1</td>
+        </tr>
+        <tr>
+          <td class="col-number">2</td>
+          <td class="col-name"><span class="tip" data-tip="Add real name later">Student 2</span></td>
+          <td class="col-course">Web Basics</td>
+          <td class="col-id">—</td>
+          <td class="col-year">1</td>
+        </tr>
+        <tr>
+          <td class="col-number">3</td>
+          <td class="col-name"><span class="tip" data-tip="Add real name later">Student 3</span></td>
+          <td class="col-course">Web Basics</td>
+          <td class="col-id">—</td>
+          <td class="col-year">1</td>
+        </tr>
+        <tr>
+          <td class="col-number">4</td>
+          <td class="col-name"><span class="tip" data-tip="Add real name later">Student 4</span></td>
+          <td class="col-course">Web Basics</td>
+          <td class="col-id">—</td>
+          <td class="col-year">1</td>
+        </tr>
+        <tr>
+          <td class="col-number">5</td>
+          <td class="col-name"><span class="tip" data-tip="Add real name later">Student 5</span></td>
+          <td class="col-course">Web Basics</td>
+          <td class="col-id">—</td>
+          <td class="col-year">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<h2>Task 10.12.25 – Final Personal Profile & Presentation</h2>
+<p>
+Created a final personal profile webpage including all completed tasks and a CV section.
+Prepared a certification presentation summarizing weekly progress and learning outcomes.
+</p>
+
+<h3>What I Learned</h3>
+<ul>
+  <li>How to organize multiple tasks into a single structured website.</li>
+  <li>How to present technical work clearly and logically.</li>
+  <li>How to summarize learning outcomes from multiple weeks.</li>
+  <li>How to prepare a technical presentation supported by screenshots.</li>
+</ul>
+<section class="card" id="set-d">
+  <h2>SET D – JavaScript Tasks</h2>
+  <p>
+    This section includes 30 JavaScript tasks (strings, arrays, functions, validation, DOM events).
+    Full implementation is available on the SET D page.
+  </p>
+
+  <p>
+    <a href="set-d.html">Open SET D Tasks Page →</a>
+  </p>
+
+  <h3>Task List</h3>
+  <ol class="setd-list">
+    <li>Reverse words order in sentence.</li>
+    <li>Extract first, third, fourth, last characters from string.</li>
+    <li>Find longest word from string.</li>
+    <li>Toggle case of entire string.</li>
+    <li>Find word count + space count.</li>
+    <li>Trim extra spaces and display cleaned string.</li>
+    <li>Create array of fruits and show third element.</li>
+    <li>Remove duplicates from array.</li>
+    <li>Find last element from array (popup).</li>
+    <li>Find index of element (user input).</li>
+    <li>Apply map() to double each element.</li>
+    <li>Apply map() to convert array strings to uppercase.</li>
+    <li>Splice: replace elements one by one.</li>
+    <li>Splice: delete elements one by one.</li>
+    <li>Function: arithmetic based on choice.</li>
+    <li>Function: swap two numbers.</li>
+    <li>Function: sum of digits.</li>
+    <li>Function: reverse a number.</li>
+    <li>Function: check leap year.</li>
+    <li>Popup: allow only 10-digit input.</li>
+    <li>Popup: numeric/string input rule arithmetic.</li>
+    <li>Validate: required field check.</li>
+    <li>Validate: age must be &gt;= 18.</li>
+    <li>Signup form submit/reset.</li>
+    <li>Display submitted data + show success message.</li>
+    <li>Reset clears output.</li>
+    <li>Create person object.</li>
+    <li>Store 3 persons in array and display.</li>
+    <li>Countdown timer with Start/Pause/Reset.</li>
+    <li>Double-click event: clear task output area.</li>
+  </ol>
+
+  <h3>What I Learned</h3>
+  <ul>
+    <li>JavaScript string and array manipulation (split, map, splice, trim).</li>
+    <li>Writing reusable functions for common problems.</li>
+    <li>Using prompt/alert for quick user input and output.</li>
+    <li>Basic form validation and input rules.</li>
+    <li>DOM events (click, submit, reset, double-click) and output handling.</li>
+  </ul>
+</section>
+
+
+   
+
+  </div>
+</body>
+</html>
